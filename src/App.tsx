@@ -2,6 +2,7 @@ import { CardComponent } from "./components/CardCM";
 import { CatalogComponent } from "./styles";
 import { useEffect, useState } from "react";
 import { cardModel } from "./components/model";
+// import { cardImageFull } from "./components/model";
 
 function App() {
   const [modal, setModal] = useState(false);
@@ -13,13 +14,25 @@ function App() {
     }
   }, [DataModal]);
 
+  function unsetModal() {
+    if (modal) {
+      setModal(false);
+      setDataModal(null);
+    } else {
+      setModal(true);
+    }
+  }
+
   // async function handleModal(cardData: cardModel) {}
   return (
     <CatalogComponent>
       {modal && (
-        <div onClick={() => setModal(!modal)} className="modal">
-          <img src={DataModal} />
-        </div>
+        <>
+          <div onClick={() => unsetModal()} className="fundo" />
+          <div className="modal">
+            <img className="modal-img" src={DataModal} />s
+          </div>
+        </>
       )}
       <div className="container">
         <div className="text">
@@ -28,7 +41,7 @@ function App() {
         </div>
         <div className="catalog">
           {cardModel.map((card) => (
-            <li key={card.name} onClick={() => setDataModal(card.image)}>
+            <li key={card.name} onClick={() => setDataModal(card.imageFull)}>
               <CardComponent name={card.name} image={card.image} />
             </li>
           ))}

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const CardComponent = styled.div`
+  transition: all 0.4s ease-in-out;
   img {
     width: 100%;
     height: 204px;

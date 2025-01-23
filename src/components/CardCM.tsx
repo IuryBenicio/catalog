@@ -1,4 +1,5 @@
 import { CardComponent as CardContainer } from "./stylesCard";
+
 type Props = {
   name: string;
   image: string;
