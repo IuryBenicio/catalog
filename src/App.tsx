@@ -36,7 +36,7 @@ function App() {
       )}
       <div className="container">
         <div className="text">
-          <h1>Be Inovation Catalog</h1>
+          <h1>Be Inovation</h1>
           <p>TEMAS</p>
         </div>
         <div className="catalog">
