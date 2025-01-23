@@ -6,7 +6,7 @@ import { cardModel } from "./components/model";
 
 function App() {
   const [modal, setModal] = useState(false);
-  const [DataModal, setDataModal] = useState();
+  const [DataModal, setDataModal] = useState("");
 
   useEffect(() => {
     if (DataModal) {
@@ -17,7 +17,7 @@ function App() {
   function unsetModal() {
     if (modal) {
       setModal(false);
-      setDataModal(null);
+      setDataModal("");
     } else {
       setModal(true);
     }
